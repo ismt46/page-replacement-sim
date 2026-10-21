@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sayfa Değiştirme Simülatörü</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Sayfa Değiştirme Algoritmaları Simülatörü</h1>
+    <p class="sub">BİM 361 İşletim Sistemleri · Sprint 1 PoC</p>
+  </header>
+
+  <main>
+    <section class="controls">
+      <label>Referans dizisi
+        <input id="reference" value="7 0 1 2 0 3 0 4 2 3 0 3 2 1 2 0 1 7 0 1">
+      </label>
+      <label>Çerçeve sayısı
+        <input id="frames" type="number" min="1" max="10" value="3">
+      </label>
+      <label>Algoritma
+        <select id="algorithm"></select>
+      </label>
+      <div class="buttons">
+        <button id="run">Çalıştır</button>
+        <button id="random" class="secondary">Rastgele dizi</button>
+        <button id="belady" class="secondary">Belady örneği</button>
+      </div>
+    </section>
+
+    <p id="error" class="error"></p>
+    <p id="summary" class="summary"></p>
+    <div id="output" class="table-wrap"></div>
+
+    <p class="legend">
+      <span class="sw sw-fault"></span> sayfa hatası (F)
+      <span class="sw sw-hit"></span> isabet (✓)
+      <span class="sw sw-new"></span> bu adımda yüklenen sayfa
+    </p>
+  </main>
+
+  <!-- Yükleme sırası önemli: önce çekirdek, sonra algoritmalar, en son arayüz -->
+  <script src="types.js"></script>
+  <script src="parser.js"></script>
+  <script src="simulator.js"></script>
+  <script src="fifo.js"></script>
+  <script src="lru.js"></script>
+  <script src="optimal.js"></script>
+  <script src="table.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

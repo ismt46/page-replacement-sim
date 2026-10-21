@@ -1,0 +1,12 @@
+{
+  "name": "page-replacement-sim",
+  "version": "0.1.0",
+  "description": "Sayfa değiştirme algoritmaları (FIFO, LRU, Optimal) simülatörü — BİM 361",
+  "private": true,
+  "scripts": {
+    "test": "node run-tests.js",
+    "demo": "node cli.js",
+    "start": "npx serve ."
+  },
+  "license": "MIT"
+}
