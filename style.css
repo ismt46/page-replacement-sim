@@ -1,0 +1,39 @@
+:root {
+  --bg: #f6f7f9; --card: #fff; --text: #1d2330; --muted: #667085; --line: #dde1e7;
+  --fault: #d92d20; --fault-bg: #fde8e7; --hit: #12805c; --hit-bg: #e3f5ed;
+  --new-bg: #fff4d6; --accent: #2f5bea;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font-family: system-ui, -apple-system, "Segoe UI", sans-serif; background: var(--bg); color: var(--text); }
+header { padding: 24px 16px 8px; max-width: 1100px; margin: 0 auto; }
+h1 { margin: 0; font-size: 1.5rem; }
+.sub { margin: 4px 0 0; color: var(--muted); }
+main { max-width: 1100px; margin: 0 auto; padding: 16px; }
+
+.controls { display: flex; flex-wrap: wrap; gap: 12px; align-items: flex-end; background: var(--card); padding: 16px; border: 1px solid var(--line); border-radius: 10px; }
+.controls label { display: flex; flex-direction: column; gap: 4px; font-size: .85rem; color: var(--muted); }
+.controls label:first-child { flex: 1 1 320px; }
+input, select { font: inherit; padding: 8px 10px; border: 1px solid var(--line); border-radius: 6px; color: var(--text); }
+#frames { width: 90px; }
+.buttons { display: flex; gap: 8px; flex-wrap: wrap; }
+button { font: inherit; padding: 8px 14px; border: 0; border-radius: 6px; background: var(--accent); color: #fff; cursor: pointer; }
+button.secondary { background: #e8ecf7; color: var(--accent); }
+
+.error { color: var(--fault); min-height: 1.2em; }
+.summary { font-size: 1.05rem; }
+.fault-text { color: var(--fault); font-weight: 600; }
+
+.table-wrap { overflow-x: auto; background: var(--card); border: 1px solid var(--line); border-radius: 10px; }
+.sim-table { border-collapse: collapse; font-variant-numeric: tabular-nums; }
+.sim-table th, .sim-table td { border: 1px solid var(--line); min-width: 38px; height: 36px; text-align: center; padding: 0 6px; }
+.sim-table tbody th, .sim-table thead th:first-child { text-align: left; white-space: nowrap; color: var(--muted); font-weight: 500; background: #fafbfc; }
+.sim-table thead th.fault, .status-row td.fault { background: var(--fault-bg); color: var(--fault); font-weight: 700; }
+.sim-table thead th.hit, .status-row td.hit { background: var(--hit-bg); color: var(--hit); font-weight: 700; }
+.cell-new { background: var(--new-bg); font-weight: 700; }
+.cell-hit { outline: 2px solid var(--hit); outline-offset: -3px; }
+
+.legend { color: var(--muted); font-size: .85rem; display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
+.sw { display: inline-block; width: 14px; height: 14px; border-radius: 3px; margin-left: 10px; }
+.sw-fault { background: var(--fault-bg); border: 1px solid var(--fault); }
+.sw-hit { background: var(--hit-bg); border: 1px solid var(--hit); }
+.sw-new { background: var(--new-bg); border: 1px solid #e0b100; }
